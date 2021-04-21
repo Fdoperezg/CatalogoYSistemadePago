@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Respuesta a la parte II del desafío:
 
-Things you may want to cover:
+Para mejorar la implementación, el otro alumno debería:
 
-* Ruby version
+1- Crear un nuevo proyecto rails con:
+ $ rails new animals
 
-* System dependencies
+2- Crear los modelos que representan a las entidades necesarias: 
+ $ rails g model animal
+ $ rails g model dog
+ $ rails g model cat
+ $ rails g model cow
 
-* Configuration
+ 3- Agregar al modelo Animal un modelo genérico 
+    
+    class Animal < ApplicationController
+        def noise
+            puts 'Some noise"
+        end
+    end
 
-* Database creation
+ 4- Agregar a cada modelo de animales un método que reemplace el método noise definido en Animal. Como estos modelos heredan de Animal, cada modelo tendrá un método "noise" con un sonido particular.
 
-* Database initialization
+    class Dog < Animal 
+        def noise
+            puts 'Guau'
+        end
+    end
 
-* How to run the test suite
+    class Cat < Animal 
+        def noise
+            puts 'Miau'
+        end
+    end
 
-* Services (job queues, cache servers, search engines, etc.)
+    class Cow < Animal 
+        def noise
+            puts 'Muuu'
+        end
+    end
 
-* Deployment instructions
-
-* ...
